@@ -1,0 +1,63 @@
+name: RiddleHouse
+options:
+  bundleIdPrefix: com.shimondeitel
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  RiddleHouse:
+    type: application
+    platform: iOS
+    sources:
+      - path: RiddleHouse
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.riddlehouse
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: RiddleHouse/Info.plist
+        CODE_SIGN_ENTITLEMENTS: RiddleHouse/RiddleHouse.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  RiddleHouseTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: RiddleHouseTests
+      - path: RiddleHouse.storekit
+    dependencies:
+      - target: RiddleHouse
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.riddlehouse.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  RiddleHouse:
+    build:
+      targets:
+        RiddleHouse: all
+        RiddleHouseTests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: RiddleHouse.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: RiddleHouse.storekit
+      targets:
+        - RiddleHouseTests
+    archive:
+      config: Release

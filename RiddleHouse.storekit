@@ -1,0 +1,40 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "RIDDLEHOUSE_STOREKIT_CONFIG",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : true,
+      "internalID" : "riddlehouse_pro_unlock_id",
+      "localizations" : [
+        {
+          "description" : "Unlock the full riddle library, custom riddles, leaderboard history and one-tap sharing. One-time purchase.",
+          "displayName" : "Riddle House Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "riddlehouse_pro_unlock",
+      "referenceName" : "Riddle House Pro Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
